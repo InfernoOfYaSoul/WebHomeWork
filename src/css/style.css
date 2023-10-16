@@ -1,0 +1,74 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 160px;
+}
+
+.major{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+}
+
+.header{
+    display: flex;
+    width: 1360px;
+    padding: 20px 40px;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFF;
+    box-shadow: 0px 1.13351px 4.29362px 0px rgba(133, 94, 152, 0.03), 0px 2.86674px 10.85888px 0px rgba(133, 94, 152, 0.04), 0px 5.84789px 22.15109px 0px rgba(133, 94, 152, 0.05), 0px 5.84789px 22.15109px 0px rgba(133, 94, 152, 0.05);
+
+}
+
+@font-face {
+    font-family: "Museo Sans Cyrl";
+    src: url("/Users/dmitriiivanov/WebHomeWork/src/fonts");
+    font-weight: 500;
+    /* /MuseoSansCyrl500 */
+}
+
+.left_block{
+    width: 96px;
+    height: 47px;
+}
+
+.right_block{
+    padding: 8px 16px;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--ffffff-white-main, #FFF);
+}
+
+.prof{
+    display: flex;
+    width: 1040px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+
+}
+.prof .top{
+    display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 8px;
+    border: 1px solid var(--7953-c-3-purple-main, #7953C3);
+    background: var(--ffffff-white-main, #FFF);
+
+    color: var(--6-b-39-cb-main-purple-hover, #6B39CB);
+
+    /* Small */
+    font-family: Museo Sans Cyrl;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: -0.14px;
+}
+
