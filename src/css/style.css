@@ -1,3 +1,6 @@
+*{
+    font-family: 'Museo Sans Cyrl';
+}
 .body{
     display: flex;
     flex-direction: column;
@@ -24,10 +27,10 @@
 }
 
 @font-face {
-    font-family: "Museo Sans Cyrl";
-    src: url("/Users/dmitriiivanov/WebHomeWork/src/fonts");
-    font-weight: 500;
-    /* /MuseoSansCyrl500 */
+    font-family: 'Museo Sans Cyrl';
+    src: url('../fonts/MuseoSansCyrl500.otf') format('opentype');
+    font-weight: normal;
+    /* /Users/dmitriiivanov/WebHomeWork/src/fonts/MuseoSansCyrl500 */
 }
 
 .left_block{
@@ -45,16 +48,25 @@
 .prof{
     display: flex;
     width: 1040px;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: flex-start;
     gap: 40px;
 
 }
+/* --------------top-------------- */
 .prof .top{
     display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+}
+
+.prof .top .top-button{
+    display: flex;
     padding: 8px 16px;
+    flex-basis: content;
     justify-content: center;
     align-items: center;
+    width: 109px;
     gap: 8px;
 
     border-radius: 8px;
@@ -64,11 +76,135 @@
     color: var(--6-b-39-cb-main-purple-hover, #6B39CB);
 
     /* Small */
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: -0.14px;
+}
+
+.prof .top .top-info{
+    display: flex;
+    width: 1040px;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.prof .top .top-info-h{
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+
+    color: var(--040013-black-main, #040013);
+    /* H3 */
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px; /* 125% */
+    letter-spacing: -0.32px;
+}
+
+.prof .top .top-info-add{
+    display: flex;
+    padding-bottom: 0px;
+    align-items: flex-start;
+    gap: 16px;
+
+    color: #CCC;
+
+    /* P bold */
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px; /* 150% */
+    letter-spacing: -0.16px;
+}
+
+.top-info-bar{
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    background: var(--f-4-f-4-f-6-purple-fill, #F4F4F6);
+}
+/* ------------center---------- */
+
+.prof .center{
+    display: flex;
+    padding-top: 40px;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.center-left{
+    display: flex;
+    width: 366px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    align-self: stretch;
+}
+
+.center-left-ava{
+    display: flex;
+    height: 200px;
+    padding: 40px 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    align-self: stretch;
+
+    border-radius: 16px;
+    border: 1px dashed var(--d-9-d-1-e-0-stroke, #CDBDDB);
+}
+
+.center-left-ava-download{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.center-left-ava-download-AvaProf{
+    width: 191px;
+    color: var(--000-black, #000);
+    text-align: center;
+    /* P bold *
+    font-size: 16px
+    font-weight: 600;
+    line-height: 24px; /* 150% */
+    letter-spacing: -0.16px;
+}
+
+.center-left-ava-download-button{
+    display: flex;
+    padding: 8px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 8px;
+    background: var(--7953-c-3-purple-main, #7953C3);
+    /*  */
+    color: var(--ffffff-white-main, #FFF);
+    /* Small */
     font-family: Museo Sans Cyrl;
     font-size: 14px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 20px; /* 142.857% */
     letter-spacing: -0.14px;
+}
+
+.center-left-ava-comment{
+    color: #CCC;
+
+    text-align: center;
+    /* Small */
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: -0.14px;
+
 }
 
