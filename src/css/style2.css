@@ -793,10 +793,6 @@
     background: var(--eeeef-1-filter-hover, #EEEEF1);
 }
 
-.neighbourinfo-txt{
-
-}
-
 .description{
     display: flex;
     align-items: flex-start;
