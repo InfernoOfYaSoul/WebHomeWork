@@ -48,12 +48,41 @@
     background: var(--ffffff-white-main, #FFF);
 }
 
+.button-exit{
+    display: flex;
+    padding: 8px 16px;
+    flex-basis: content;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 8px;
+    border: 1px solid var(--7953-c-3-purple-main, #7953C3);
+    background: var(--ffffff-white-main, #FFF);
+
+    color: var(--6-b-39-cb-main-purple-hover, #6B39CB);
+
+    /* Small */
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: -0.14px;
+    transition: 0.2s;
+}
+
+.button-exit:hover{
+    border: 1px solid var(--7953-c-3-purple-main, #7953C3);
+    background: var(--ffffff-white-main, #6B39CB);
+    color: var(--6-b-39-cb-main-purple-hover, #FFFFFF);
+}
+
 .prof{
     display: flex;
     width: 1040px;
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
+
 
 }
 /* --------------top-------------- */
@@ -63,7 +92,7 @@
     /* justify-content: flex-end; */
 }
 
-.prof .top .top-button{
+.top-button{
     display: flex;
     padding: 8px 16px;
     flex-basis: content;
@@ -83,6 +112,13 @@
     font-weight: normal;
     line-height: 20px; /* 142.857% */
     letter-spacing: -0.14px;
+    transition: 0.2s;
+}
+
+.top-button:hover{
+    border: 1px solid var(--7953-c-3-purple-main, #7953C3);
+    background: var(--ffffff-white-main, #6B39CB);
+    color: var(--6-b-39-cb-main-purple-hover, #FFFFFF);
 }
 
 .prof .top .top-info{
@@ -354,7 +390,7 @@
     color: var(--040013-black-main, #040013);
     padding: 12px 8px 12px 12px;
     align-self:stretch;
-    /* width: 150px; */
+    /* width: 285px; */
     gap: 8px;
     /* align-self: stretch; */
     /* P paragraph */
@@ -363,11 +399,12 @@
     font-style: normal;
     font-weight: 400;
     line-height: 24px; /* 150% */
+    transition: 0.2s;
 }
 
 #calendar{
     border-radius: 2px;
-    background-color: #FFF;
+    background-color: #F4F4F6;
     padding: 8px 8px 8px 8px;
 }
 
@@ -376,6 +413,12 @@
     flex-direction: column;
     align-items: flex-start;
     /* align-self: stretch; */
+}
+
+.phone-input:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+    overflow: hidden;
 }
 
 .about{
@@ -390,6 +433,12 @@
     align-self: stretch;
     border-radius: 8px;
     background-color: #F4F4F6;
+}
+
+.infobox-border:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+    overflow: hidden;
 }
 
 #infobox{

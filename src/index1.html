@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style1.css">
     <title>Homemeet</title>
 </head>
 
@@ -17,7 +17,7 @@
             <img src="./img/Homemeet.svg">                
         </div>
         <div class="right_block">
-            <img src="./img/Account_ex.svg">
+            <button class="button-exit">Выйти из аккаунта</button>
         </div>
     </header>
     <main class="prof">
@@ -67,11 +67,12 @@
                             </div>
                         </div>
                         <div class="text-input">
-                            <input type="date" name="date" id="date" placeholder="Дата рождения">
+                            <input type="text" name="date" id="date" placeholder="Дата рождения" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            
                             <button type="submit" id="calendar"> <img src="../src/img/Calendar.svg"> </button>
                         </div>
 
-                        <input type="text" name="tg" id="name" placeholder="">
+                        <input type="text" name="tg" id="name" placeholder="Телеграм">
                         <div class="phone-input">
                             <div class="upperdescription">
                                 Номер телефона
