@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<script src="./js/script.js"></script>
+<!-- <script src="./js/script.js"></script> -->
 
 <section class="major">
     <header class="header">
@@ -22,7 +22,8 @@
     </header>
     <main class="prof">
             <div class="top">
-                <button class="top-button">На главную</button>
+                <button class="top-button" id="demo">На главную</button>
+                
                 <div class="top-info">
                     <div class="top-info-h"> Создание профиля
                         <div class="top-info-add"> / </div> 
@@ -54,7 +55,9 @@
                             <div class="upperdescription">
                                 Имя и фамилия
                             </div>
-                            <input type="text" name="name" id="name">
+                            <form action="./index1.html" method="get" class="get-info">
+                                <input type="text" name="Name" id="name">
+                            </form>
                             <div class="radiosex">
                                 <div class="male">
                                     <input class="custom-radio" name="gender" type="radio" id="male" style="cursor: pointer;" required>
@@ -129,7 +132,10 @@
                                             <div class="emptytag"></div>
                                         </div>
                                     </div>
-                                    <div class="neighbourinfo"></div>
+                                    <div class="neighbourinfo" id="neighbourinfo">
+                                        Unchecked
+                                        <!-- <p class="neighbourInfo"> </p> -->
+                                    </div>
                                     <div class="description">
                                         <div class="description-info">
                                             Мне очень нравится устраивать вечеринки, дебоширить и мазать с...
@@ -185,11 +191,15 @@
                     </div>
                 </div>
             </div>
+            <!-- http://127.0.0.1:5501/src/index1.html -->
             <div class="bottom">
-                <button class="big-button">
+                <form action="./index1.html" method="get" class="get-info">
+                <button class="big-button" type="submit">
                     Продолжить
                 </button>
+                </form>
             </div>
+            <script src="./js/script.js"></script>
     </main>
 </section>
     <!-- <aside></aside> -->
@@ -225,5 +235,7 @@
     </footer>
 
 </body>
+
+<!-- <script src="./js/script.js"></script> -->
 
 </html>
