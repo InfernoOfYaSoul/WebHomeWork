@@ -42,12 +42,13 @@
                             <div class="center-left-ava-download-AvaProf">
                                 Аватар профиля
                             </div>
-                            <button class="center-left-ava-download-button">
+                            <label class="center-left-ava-download-button">
+                                <input type="file" class="center-left-ava-download-button-input" onchange="gotPhoto(this)" accept="image/jpeg, image/png"/>
                                 Загрузить
-                            </button>
+                            </label>
                         </div>
                         <div class="center-left-ava-comment">
-                            Загрузите фотографию весом не более 10 мб
+                            <p>Загрузите фотографию весом не более 10 мб</p>
                         </div>
                     </div>
                     <div class="center-left-info">
@@ -55,32 +56,32 @@
                             <div class="upperdescription">
                                 Имя и фамилия
                             </div>
-                            <form action="./index1.html" method="get" class="get-info">
-                                <input type="text" name="Name" id="name">
-                            </form>
+                            <!-- <form method="get" class="get-info"> -->
+                                <input type="text" name="Name" id="name" class="inn">
+                            <!-- </form> -->
                             <div class="radiosex">
                                 <div class="male">
-                                    <input class="custom-radio" name="gender" type="radio" id="male" style="cursor: pointer;" required>
+                                    <input class="custom-radio" name="gender" type="radio" id="male" value="Парень" style="cursor: pointer;" required>
                                     <label class="gender" for="male">Парень</label>
                                 </div>
                                 <div class="female">
-                                    <input class="custom-radio" name="gender" type="radio" id="female" style="cursor: pointer;" required>
+                                    <input class="custom-radio" name="gender" type="radio" id="female" value="Девушка" style="cursor: pointer;" required>
                                     <label class="gender" for="female">Девушка</label>
                                 </div>
                             </div>
                         </div>
                         <div class="text-input">
-                            <input type="text" name="date" id="date" placeholder="Дата рождения" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            <input class="inn" type="text" name="date" id="date" placeholder="Дата рождения" onfocus="(this.type='date')" onblur="(this.type='text')">
                             
                             <button type="submit" id="calendar"> <img src="../src/img/Calendar.svg"> </button>
                         </div>
 
-                        <input type="text" name="tg" id="name" placeholder="Телеграм">
+                        <input class="inn" type="text" name="tg" id="name" placeholder="Телеграм">
                         <div class="phone-input">
                             <div class="upperdescription">
                                 Номер телефона
                             </div>
-                            <input type="text" name="phonenum" id="name" placeholder="Введите номер">
+                            <input class="inn" type="text" name="phonenum" id="name" placeholder="Введите номер">
                         </div>
                         <div class="about">
                             <div class="infobox-border">
@@ -104,7 +105,7 @@
                         <div class="center-right-profile">
                             <div class="center-right-profile-photo">
                                 <div class="photomini">
-                                    <img src="./img/Photomini.svg">
+                                    <img src="./img/Photomini.svg" id="profileImg">
                                 </div>
                                 <div class="showcontact">
                                     Показать контакты
@@ -114,7 +115,7 @@
                                 <div class="center-right-profile-info-up">
                                     <div class="hatinfo">
                                         <div class="name">
-                                            Саша Фефелов
+                                            <p> Саша Фефелов </p>
                                         </div>
                                         <div class="small_hatinfo">
                                             <div class="sex">
@@ -129,16 +130,17 @@
                                             <div class="dot">
                                                 <img src="./img/Dot.svg">
                                             </div>
-                                            <div class="emptytag"></div>
+                                            <div class="sex">
+                                                @Creeper2004
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="neighbourinfo" id="neighbourinfo">
-                                        Unchecked
-                                        <!-- <p class="neighbourInfo"> </p> -->
+                                        <p class="neighbourInfo"> </p>
                                     </div>
                                     <div class="description">
                                         <div class="description-info">
-                                            Мне очень нравится устраивать вечеринки, дебоширить и мазать с...
+                                            <p>Мне очень нравится устраивать вечеринки, дебоширить и мазать с</p>
                                         </div>
                                         <div class="more-description">
                                             <button class="unwrap">
@@ -191,15 +193,11 @@
                     </div>
                 </div>
             </div>
-            <!-- http://127.0.0.1:5501/src/index1.html -->
             <div class="bottom">
-                <form action="./index1.html" method="get" class="get-info">
                 <button class="big-button" type="submit">
                     Продолжить
                 </button>
-                </form>
             </div>
-            <script src="./js/script.js"></script>
     </main>
 </section>
     <!-- <aside></aside> -->
@@ -233,7 +231,7 @@
         </div>
         <div class="framing"></div>
     </footer>
-
+    <script src="./js/script.js"></script>
 </body>
 
 <!-- <script src="./js/script.js"></script> -->

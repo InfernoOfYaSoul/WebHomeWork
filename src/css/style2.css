@@ -467,11 +467,11 @@
     width: 100%;
 }
 
-.personal-info-txt:active, :hover, :focus {
+/* .personal-info-txt:active, :hover, :focus {
     outline: 0;
     outline-offset: 0;
     overflow: hidden;
-}
+} */
 /* #personal-info-txt{
     align-self: stretch;
     decoratio
@@ -664,7 +664,7 @@
 .photomini{
     width: 140px;
     height: 140px;
-    overflow: hidden;
+
     border-radius: 16px;
     border: 1px solid #EBEBEB;
     background: #FFFFFF 50% / cover no-repeat;
