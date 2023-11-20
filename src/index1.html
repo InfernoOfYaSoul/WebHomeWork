@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style1.css">
     <title>Homemeet</title>
+
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 
 <body>
@@ -20,7 +22,7 @@
             <button class="button-exit">Выйти из аккаунта</button>
         </div>
     </header>
-    <main class="prof">
+    <main class="prof" id="pageOne">
             <div class="top">
                 <button class="top-button" id="demo">На главную</button>
                 
@@ -57,7 +59,7 @@
                                 Имя и фамилия
                             </div>
                             <!-- <form method="get" class="get-info"> -->
-                                <input type="text" name="Name" id="name" class="inn">
+                                <input  type="text" name="Name" id="name" class="inn">
                             <!-- </form> -->
                             <div class="radiosex">
                                 <div class="male">
@@ -124,7 +126,7 @@
                                             <div class="dot">
                                                 <img src="./img/Dot.svg">
                                             </div>
-                                            <div class="sex">
+                                            <div class="sex", id="ageinfo">
                                                 21 год
                                             </div>
                                             <div class="dot">

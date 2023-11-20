@@ -1,15 +1,19 @@
 let topButton = document.getElementById("demo");
 let imgButton = document.querySelector(".center-left-ava-download-button");
-// document.getElementById('demo').style.fontSize = "35px";
 
-// topButton.style.fontSize = "35px";
-// topButton.innerHTML =  "Hi";
-// document.write(topButton);
 
 let input = document.querySelectorAll("input");
 let surName = document.querySelector('.name');
 let tg = document.querySelectorAll(".sex");
-var dateControl = document.querySelector('input[type="date"]');
+let nextPageButton = document.querySelector(".big-button");
+let dateControl = document.querySelector('input[type="date"]');
+let parent = document.querySelector('.prof');
+let topChild = document.querySelector('.top');
+let centerChild = document.querySelector('.center');
+let bottomChild = document.querySelector('.bottom');
+
+
+
 
 
 
@@ -62,18 +66,25 @@ for(const button of inp){
     });
 }
 
-// console.log(input);
 
-input[4].addEventListener('change', (evt) =>{
-    evt.preventDefault();
-    let currentDate = new Date();
-    dateformat
-    let apart = input[4].value;
-    let year, day, month = apart.split(["-"]);
-    year = currentDate.getFullYear() - year;
-    day = currentDate.getDay;
-    month = currentDate.getMonth;
-})
+let ageinfo = document.querySelector("#ageinfo");
+
+function get_current_age(date) {
+    return ((new Date().getTime() - new Date(date)) / (24 * 3600 * 365.25 * 1000)); //функция вычисления возраста
+}
+
+function ageMath(dateBirth) {
+    return Math.floor(get_current_age(dateBirth));
+}
+
+input[4].addEventListener('change', () => {
+    let output = ageMath(input[4].value);
+    if (output < 100){
+        ageinfo.innerHTML = (output) + ' лет';
+        ageinfo.style.cssText = 'color: #040013; font-weight:400; font-size: 9px; background-color: #FFF; width: auto;';
+        window.localStorage.setItem('age', ageinfo.innerHTML);
+    }
+});
 
 
 
@@ -82,6 +93,20 @@ input[5].addEventListener('change', (evt) =>{
     let apart = String(input[4].value);
     let sep = apart.split([" "]);
     tg[2].textContent = sep[0];
+})
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (window.jQuery){console.log("Yes")}
+    else{console.log("No")}
+    nextPageButton.addEventListener('click', (evt) =>{
+        evt.preventDefault();
+        parent.removeChild(topChild);
+        parent.removeChild(centerChild);
+        parent.removeChild(bottomChild);
+        
+        jQuery("main").load("index2.html #container");
+    })
 })
 
 
