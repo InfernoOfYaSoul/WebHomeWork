@@ -90,9 +90,7 @@ input[4].addEventListener('change', () => {
 
 input[5].addEventListener('change', (evt) =>{
     evt.preventDefault();
-    let apart = String(input[4].value);
-    let sep = apart.split([" "]);
-    tg[2].textContent = sep[0];
+    tg[2].textContent = String(input[5].value);
 })
 
 

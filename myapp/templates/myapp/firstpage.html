@@ -1,0 +1,183 @@
+{% extends 'myapp/sitebase.html' %}
+
+{% block content %}
+<div class="top">
+    <button class="top-button" id="demo">На главную</button>
+    
+    <div class="top-info">
+        <div class="top-info-h"> Создание профиля
+            <div class="top-info-add"> / </div> 
+            <div class="top-info-add"> О себе </div>
+        </div>
+        <div class="top-info-bar">
+            <img src="/static/img/Bar.svg">
+        </div>
+    </div>
+</div>
+<div class="center">
+    <!-- left -->
+    <div class="center-left">
+        <div class="center-left-ava">
+            <div class="center-left-ava-download">
+                <div class="center-left-ava-download-AvaProf">
+                    Аватар профиля
+                </div>
+                <label class="center-left-ava-download-button">
+                    <input type="file" class="center-left-ava-download-button-input" onchange="gotPhoto(this)" accept="image/jpeg, image/png"/>
+                    Загрузить
+                </label>
+            </div>
+            <div class="center-left-ava-comment">
+                <p>Загрузите фотографию весом не более 10 мб</p>
+            </div>
+        </div>
+        <div class="center-left-info">
+            <div class="namegrande">
+                <div class="upperdescription">
+                    Имя и фамилия
+                </div>
+                <!-- <form method="get" class="get-info"> -->
+                    <input  type="text" name="Name" id="name" class="inn">
+                <!-- </form> -->
+                <div class="radiosex">
+                    <div class="male">
+                        <input class="custom-radio" name="gender" type="radio" id="male" value="Парень" style="cursor: pointer;" required>
+                        <label class="gender" for="male">Парень</label>
+                    </div>
+                    <div class="female">
+                        <input class="custom-radio" name="gender" type="radio" id="female" value="Девушка" style="cursor: pointer;" required>
+                        <label class="gender" for="female">Девушка</label>
+                    </div>
+                </div>
+            </div>
+            <div class="text-input">
+                <input class="inn" type="text" name="date" id="date" placeholder="Дата рождения" onfocus="(this.type='date')" onblur="(this.type='text')">
+                
+                <button type="submit" id="calendar"> <img src="/static/img/Calendar.svg"> </button>
+            </div>
+
+            <input class="inn" type="text" name="tg" id="name" placeholder="Телеграм">
+            <div class="phone-input">
+                <div class="upperdescription">
+                    Номер телефона
+                </div>
+                <input class="inn" type="text" name="phonenum" id="name" placeholder="Введите номер">
+            </div>
+            <div class="about">
+                <div class="infobox-border">
+                    <textarea type="text" name="infobox" id="infobox"></textarea>
+                </div>
+                <div class="upperdescription">
+                    О себе
+                </div>
+                <div class="example">
+                    Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень люблю читать, играть в хорроры и смотреть аниме. Открыт к общению и взаимопомощи :)
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- right -->
+    <div class="center-right">
+        <div class="center-right-account">
+            <div class="center-right-registrationinfo">
+                Так будет выглядеть твоя будущая страница
+            </div>
+            <div class="center-right-profile">
+                <div class="center-right-profile-photo">
+                    <div class="photomini">
+                        <img src="/static/img/Photomini.svg" id="profileImg">
+                    </div>
+                    <div class="showcontact">
+                        Показать контакты
+                    </div>
+                </div>
+                <div class="center-right-profile-info">
+                    <div class="center-right-profile-info-up">
+                        <div class="hatinfo">
+                            <div class="name">
+                                <p> Саша Фефелов </p>
+                            </div>
+                            <div class="small_hatinfo">
+                                <div class="sex">
+                                    Парень
+                                </div>
+                                <div class="dot">
+                                    <img src="/static/img/Dot.svg">
+                                </div>
+                                <div class="sex", id="ageinfo">
+                                    21 год
+                                </div>
+                                <div class="dot">
+                                    <img src="/static/img/Dot.svg">
+                                </div>
+                                <div class="sex">
+                                    @Creeper2004
+                                </div>
+                            </div>
+                        </div>
+                        <div class="neighbourinfo" id="neighbourinfo">
+                            <p class="neighbourInfo"> </p>
+                        </div>
+                        <div class="description">
+                            <div class="description-info">
+                                <p>Мне очень нравится устраивать вечеринки, дебоширить и мазать с</p>
+                            </div>
+                            <div class="more-description">
+                                <button class="unwrap">
+                                    Развернуть
+                                </button>
+                                <div class="smallarrow">
+                                    <img src="/static/img/Arrowdown.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="center-right-profile-info-down">
+                        <div class="center-right-profile-info-down-up">
+                            <div class="life-preferences">
+                                <img src="/static/img/Preferences.svg">
+                            </div>
+                            <div class="metro-price">
+                                <div class="price">
+                                    <img src="/static/img/Price.svg">
+                                </div>
+                                <div class="underground">
+                                    <img src="/static/img/Undergroung.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="center-right-profile-info-down-down">
+                            <img src="/static/img/Line3.svg", class="Line3">
+                            <div class="alkosos">
+                                <img src="/static/img/Alko.svg", class="Alko">
+                                <img src="/static/img/Sosed.svg", class="Sosed">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="center-right-comment">
+            <div class="center-right-comment-textbox">
+                <div class="center-right-comment-title">
+                    Мы совсем ничего про тебя не знаем
+                </div>
+                <div class="center-right-comment-description">
+                    <div>Расскажи о себе.</div>
+                    <div>Люди пишут тем, кому доверяют. Тем более при поиске соседа</div> 
+                </div>
+            </div>
+            <div class="center-right-comment-pic">
+                <text class="cenetr-right-comment-pic">🙁</text>
+            </div>
+        </div>
+    </div>
+</div>
+<form class="bottom" href="{% url 'next_page' %}">
+    <button class="big-button" >
+        Продолжить
+    </button>
+</form>
+{% endblock %}
+
+<!-- type="submit" -->

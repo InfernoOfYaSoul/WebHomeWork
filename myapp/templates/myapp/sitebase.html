@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style1.css">
+    <title>Homemeet</title>
+
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+<!-- <script src="./js/script.js"></script> -->
+
+<section class="major">
+    <header class="header">
+        <div class="left_block">
+            <img src="/static/img/Homemeet.svg">                
+        </div>
+        <div class="right_block">
+            <button class="button-exit">Выйти из аккаунта</button>
+        </div>
+    </header>
+    <main class="prof" id="pageOne">
+        {% block content %}
+        {% endblock %}
+    </main>
+</section>
+    <!-- <aside></aside> -->
+    <footer class="footer">
+        <div class="footer-info">
+            <div class="support-info">
+                <div class="support-info-text">
+                    <div class="email-text">Support@homeet.com</div>
+                    <div class="teh-support"> Техническая поддержка</div>
+                </div>
+                <div class="help-info">
+                    <div class="help-buttons">
+                        <button class="sup-button">О сервисе</button>
+                        <button class="sup-button">Контакты</button>
+                        <button class="sup-button">Политика конфиденциальности</button>
+                    </div>
+                    <div class="icon-sup">
+                        <button class="icons"><img src="/static/icons/tg.svg"></button>
+                        <button class="icons"><img src="/static/icons/vk.svg"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="framing-line"></div>
+            <div class="comment-info">
+                <div class="comment-info-left"> Предложение не является публичной офертой. <br>
+                    Сервис не несет ответственности за действия пользователей, достоверность информации и т.д.</div>
+                <div class="comment-info-right">
+                    Сделано в бвср
+                </div>
+            </div>
+        </div>
+        <div class="framing"></div>
+    </footer>
+    <script src="/static/js/script.js"></script>
+</body>
+
+<!-- <script src="./js/script.js"></script> -->
+
+</html>
