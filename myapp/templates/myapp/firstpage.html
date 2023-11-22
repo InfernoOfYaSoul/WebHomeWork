@@ -22,10 +22,14 @@
                 <div class="center-left-ava-download-AvaProf">
                     Аватар профиля
                 </div>
-                <label class="center-left-ava-download-button">
-                    <input type="file" class="center-left-ava-download-button-input" onchange="gotPhoto(this)" accept="image/jpeg, image/png"/>
-                    Загрузить
-                </label>
+                <form action="{% url 'name_input' %}" method="POST" enctype="multipart/form-data">
+                    <label class="center-left-ava-download-button">
+                        {% csrf_token %}
+                        {{  form.photo  }}
+                        <!-- <input type="file" class="center-left-ava-download-button-input" onchange="gotPhoto(this)" accept="image/jpeg, image/png"/> -->
+                        Загрузить
+                    </label>
+                </form>
             </div>
             <div class="center-left-ava-comment">
                 <p>Загрузите фотографию весом не более 10 мб</p>
@@ -34,38 +38,61 @@
         <div class="center-left-info">
             <div class="namegrande">
                 <div class="upperdescription">
-                    Имя и фамилия
+                        Имя и фамилия
                 </div>
-                <!-- <form method="get" class="get-info"> -->
-                    <input  type="text" name="Name" id="name" class="inn">
-                <!-- </form> -->
-                <div class="radiosex">
+                <form method="post" class="get-info"  action= "{% url 'name_input' %}">
+                    {% csrf_token %}
+                    {{  form.name  }}
+                    <!-- <input  type="text" name="Name" id="name" class="inn">-->
+                </form>
+                
+                <form class="radiosex" action="{% url 'name_input' %}">
+                    {% csrf_token %}
                     <div class="male">
                         <input class="custom-radio" name="gender" type="radio" id="male" value="Парень" style="cursor: pointer;" required>
+                        <!-- {{ form.sex1 }} -->
+                        <!-- {{  form.sex.choice_label  }}
+                        {{  form.sex.tag  }} -->
                         <label class="gender" for="male">Парень</label>
                     </div>
                     <div class="female">
                         <input class="custom-radio" name="gender" type="radio" id="female" value="Девушка" style="cursor: pointer;" required>
+                        <!-- {{ form.sex1 }} -->
+                        <!-- {{  form.sex.choice_label  }}
+                        {{  form.sex.tag  }} -->
                         <label class="gender" for="female">Девушка</label>
                     </div>
-                </div>
+                </form>
             </div>
-            <div class="text-input">
-                <input class="inn" type="text" name="date" id="date" placeholder="Дата рождения" onfocus="(this.type='date')" onblur="(this.type='text')">
+            <form class="text-input" action="{% url 'name_input' %}">
+                {% csrf_token %}
+                {{  form.birth_date  }}
+                <!-- <input class="inn" type="text" name="date" id="date" placeholder="Дата рождения" onfocus="(this.type='date')" onblur="(this.type='text')"> -->
                 
                 <button type="submit" id="calendar"> <img src="/static/img/Calendar.svg"> </button>
-            </div>
-
-            <input class="inn" type="text" name="tg" id="name" placeholder="Телеграм">
-            <div class="phone-input">
+            </form>
+            
+            <form action="{% url 'name_input' %}">
+                <div class="upperdescription">
+                    Телеграмм
+                </div>
+                {% csrf_token %}
+                {{  form.tg  }}
+                <!-- <input class="inn" type="text" name="tg" id="name" placeholder="Телеграм"> -->
+            </form>
+            <form class="phone-input">
                 <div class="upperdescription">
                     Номер телефона
                 </div>
-                <input class="inn" type="text" name="phonenum" id="name" placeholder="Введите номер">
-            </div>
-            <div class="about">
+                {% csrf_token %}
+                {{  form.phone_num  }}
+                <!-- <input class="inn" type="text" name="phonenum" id="name" placeholder="Введите номер"> -->
+            </form>
+            <form class="about">
                 <div class="infobox-border">
-                    <textarea type="text" name="infobox" id="infobox"></textarea>
+                    {% csrf_token %}
+                    {{  form.text  }}
+                    <!-- <textarea type="text" name="infobox" id="infobox"></textarea> -->
                 </div>
                 <div class="upperdescription">
                     О себе
@@ -73,7 +100,7 @@
                 <div class="example">
                     Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень люблю читать, играть в хорроры и смотреть аниме. Открыт к общению и взаимопомощи :)
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <!-- right -->
@@ -173,7 +200,7 @@
         </div>
     </div>
 </div>
-<form class="bottom" href="{% url 'next_page' %}">
+<form class="bottom" action="{% url 'next_page' %}">
     <button class="big-button" >
         Продолжить
     </button>

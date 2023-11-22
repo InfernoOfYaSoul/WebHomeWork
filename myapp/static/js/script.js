@@ -42,9 +42,9 @@ document.querySelector('.center-left-ava-download-button-input').onchange = func
 }
 
 
-input[1].addEventListener('change', (evt) =>{
+input[3].addEventListener('change', (evt) =>{
     evt.preventDefault();
-    let apart = String(input[1].value);
+    let apart = String(input[3].value);
     let sep = apart.split([" "]);
     surName.textContent = sep[0] + " " + sep[1];
 })
@@ -77,20 +77,20 @@ function ageMath(dateBirth) {
     return Math.floor(get_current_age(dateBirth));
 }
 
-input[4].addEventListener('change', () => {
-    let output = ageMath(input[4].value);
+input[6].addEventListener('change', () => {
+    let output = ageMath(input[6].value);
     if (output < 100){
         ageinfo.innerHTML = (output) + ' лет';
         ageinfo.style.cssText = 'color: #040013; font-weight:400; font-size: 9px; background-color: #FFF; width: auto;';
-        window.localStorage.setItem('age', ageinfo.innerHTML);
+        //window.localStorage.setItem('age', ageinfo.innerHTML);
     }
 });
 
 
 
-input[5].addEventListener('change', (evt) =>{
+input[8].addEventListener('change', (evt) =>{
     evt.preventDefault();
-    tg[2].textContent = String(input[5].value);
+    tg[2].textContent = String(input[8].value);
 })
 
 

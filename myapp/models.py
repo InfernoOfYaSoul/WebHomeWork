@@ -18,12 +18,21 @@ from django.utils import timezone
 #         return self.title
 
 class Info(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    name = models.TextField()
-    birth_date = models.DateTimeField(default=timezone.now)
-    tg = models.CharField(max_length=200)
-    phone_num = models.CharField(max_length = 11)
+    photo = models.ImageField(upload_to="static/img/pics")
+    sex1 = models.BooleanField()
+    sex2 = models.BooleanField()
+    birth_date = models.DateField()
+    name = models.CharField(max_length = 200)
+    tg = models.CharField(max_length = 200)
+    phone_num = models.CharField(max_length = 12)
     text = models.TextField()
+
+    # author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    # name = models.TextField()
+    # birth_date = models.DateTimeField(default=timezone.now)
+    # tg = models.CharField(max_length=200)
+    # phone_num = models.CharField(max_length = 11)
+    # text = models.TextField()
 
     def publish(self):
         self.save()

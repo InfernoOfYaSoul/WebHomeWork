@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Info
-# from .forms import PostForm
+from .forms import NameForm
 
 def first_page(request):
     return render(request, 'myapp/firstpage.html',)
@@ -10,6 +10,15 @@ def next_page(request):
     return render(request, 'myapp/secondpage.html',)
     return redirect('next_page')
 
+def name_input(request):
+    if request.method == "POST":
+        form = NameForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('next_page')
+    else:
+        form = NameForm()
+    return render(request, "myapp/firstpage.html", {"form": form})
 
 # def post_list(request):
 #     posts = Post.objects.order_by('published_date')
