@@ -1,10 +1,12 @@
 {% extends 'myapp/sitebase.html' %}
 
-{% load static %}
+<!-- {% load static %} -->
 {% block content %}
 
 <div class="top">
-    <button class="top-button">На главную</button>
+    <form action="{% url 'startpage' %}">
+        <button class="top-button">На главную</button>
+    </form>
     <div class="top-info">
         <div class="top-info-h"> Создание профиля
             <div class="top-info-add"> / </div> 
@@ -53,21 +55,21 @@
                     <div class="upper-txt"> Ступень образования </div>
                     <div class="window">
                         <div class="personal-info-txt"> Ступень образования </div>
-                        <img src="../img/ArrowdownBig.svg" class="arrow">
+                        <img src="/myapp/static/img/ArrowdownBig.svg" class="arrow">
                     </div>
                 </div>
                 <div class="personal-info">
                     <div class="upper-txt"> Факультет </div>
                     <div class="window">
                         <div class="personal-info-txt"> Факультет </div>
-                        <img src="./img/ArrowdownBig.svg" class="arrow">
+                        <img src="/myapp/static/img/ArrowdownBig.svg" class="arrow">
                     </div>
                 </div>
                 <div class="personal-info">
                     <div class="upper-txt"> Образовательная программа </div>
                     <div class="window">
                         <input class="personal-info-txt" id="personal-info-txt" placeholder="Образовательная программа">
-                        <img src="./img/Magnifier.svg" class="arrow">
+                        <img src="/myapp/static/img/Magnifier.svg" class="arrow">
                     </div>
                 </div>
             </div>
@@ -86,7 +88,7 @@
             <div class="center-right-profile">
                 <div class="center-right-profile-photo">
                     <div class="photomini">
-                        <img src="./img/Dogie.jpg">
+                        <img src="/myapp/static/img/Dogie.jpg">
                     </div>
                     <div class="showcontact">
                         Показать контакты
@@ -103,13 +105,13 @@
                                     Парень
                                 </div>
                                 <div class="dot">
-                                    <img src="./img/Dot.svg">
+                                    <img src="/myapp/static/img/Dot.svg">
                                 </div>
                                 <div class="sex">
                                     21 год
                                 </div>
                                 <div class="dot">
-                                    <img src="./img/Dot.svg">
+                                    <img src="/myapp/static/img/Dot.svg">
                                 </div>
                                 <div class="sex">
                                     1 курс бакалавриат ВШБ ИБ
@@ -130,7 +132,7 @@
                                     Развернуть
                                 </button>
                                 <div class="smallarrow">
-                                    <img src="./img/Arrowdown.svg">
+                                    <img src="/myapp/static/img/Arrowdown.svg">
                                 </div>
                             </div>
                         </div>
@@ -138,22 +140,22 @@
                     <div class="center-right-profile-info-down">
                         <div class="center-right-profile-info-down-up">
                             <div class="life-preferences">
-                                <img src="./img/Preferences.svg">
+                                <img src="/myapp/static/img/Preferences.svg">
                             </div>
                             <div class="metro-price">
                                 <div class="price">
-                                    <img src="./img/Price.svg">
+                                    <img src="/myapp/static/img/Price.svg">
                                 </div>
                                 <div class="underground">
-                                    <img src="./img/Undergroung.svg">
+                                    <img src="/myapp/static/img/Undergroung.svg">
                                 </div>
                             </div>
                         </div>
                         <div class="center-right-profile-info-down-down">
-                            <img src="./img/Line3.svg", class="Line3">
+                            <img src="/myapp/static/img/Line3.svg", class="Line3">
                             <div class="alkosos">
-                                <img src="./img/Alko.svg", class="Alko">
-                                <img src="./img/Sosed.svg", class="Sosed">
+                                <img src="/myapp/static/img/Alko.svg", class="Alko">
+                                <img src="/myapp/static/img/Sosed.svg", class="Sosed">
                             </div>
                         </div>
                     </div>

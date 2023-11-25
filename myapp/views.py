@@ -3,21 +3,36 @@ from django.utils import timezone
 from .models import Info
 from .forms import NameForm
 
+
+
 def first_page(request):
     return render(request, 'myapp/firstpage.html',)
 
 def next_page(request):
-    return render(request, 'myapp/secondpage.html',)
-    return redirect('next_page')
+    if request.method == "POST":
+        form = NameForm(request.POST, request.FILES)
+        if form.is_valid():
+            print("Save2")
+            form.save()
+            return render(request, "myapp/secondpage.html")
+        print("Post no save2")
+
+    else:
+        form = NameForm()
+        print("No post no save2")
+    return render(request, "myapp/secondpage.html")
 
 def name_input(request):
     if request.method == "POST":
         form = NameForm(request.POST, request.FILES)
         if form.is_valid():
+            print("Save")
             form.save()
             return redirect('next_page')
+        print("Post no save")
     else:
         form = NameForm()
+        print("No post no save")
     return render(request, "myapp/firstpage.html", {"form": form})
 
 # def post_list(request):

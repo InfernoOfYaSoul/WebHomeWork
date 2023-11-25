@@ -18,14 +18,21 @@ from django.utils import timezone
 #         return self.title
 
 class Info(models.Model):
-    photo = models.ImageField(upload_to="static/img/pics")
-    sex1 = models.BooleanField()
-    sex2 = models.BooleanField()
-    birth_date = models.DateField()
+
+    choice_sex = [
+        ('M', 'Парень'),
+        ('F', 'Девушка'),
+    ]
+
+    photo = models.ImageField(upload_to="static/img/pics", default = "null")
+    # sex1 = models.CharField(max_length = 200)
+    # sex2 = models.CharField(max_length = 200)
+    sex = models.CharField(default="", max_length=1, choices=choice_sex, verbose_name="Пол")
+    birth_date = models.DateField(default="")
     name = models.CharField(max_length = 200)
     tg = models.CharField(max_length = 200)
-    phone_num = models.CharField(max_length = 12)
-    text = models.TextField()
+    phone_num = models.CharField(max_length = 12, default="")
+    text = models.TextField(default = "")
 
     # author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     # name = models.TextField()

@@ -16,7 +16,6 @@ let bottomChild = document.querySelector('.bottom');
 
 
 
-
 document.querySelector('.center-left-ava-download-button-input').onchange = function (event) {
     let target = event.target;
 
@@ -42,15 +41,15 @@ document.querySelector('.center-left-ava-download-button-input').onchange = func
 }
 
 
-input[3].addEventListener('change', (evt) =>{
+input[2].addEventListener('change', (evt) =>{
     evt.preventDefault();
-    let apart = String(input[3].value);
+    let apart = String(input[2].value);
     let sep = apart.split([" "]);
     surName.textContent = sep[0] + " " + sep[1];
 })
 
 
-let inp = document.querySelectorAll('.custom-radio');
+let inp = document.querySelectorAll('.custom-r');
 
 for(const button of inp){
     button.addEventListener("change", (evt) => {
@@ -62,7 +61,11 @@ for(const button of inp){
                 break;
             }
         }
-        tg[0].textContent = selectedSize;
+        if (selectedSize == "M") {
+            tg[0].textContent = "Парень";
+        }else{
+            tg[0].textContent = "Девушка";
+        }
     });
 }
 
@@ -77,8 +80,8 @@ function ageMath(dateBirth) {
     return Math.floor(get_current_age(dateBirth));
 }
 
-input[6].addEventListener('change', () => {
-    let output = ageMath(input[6].value);
+input[5].addEventListener('change', () => {
+    let output = ageMath(input[5].value);
     if (output < 100){
         ageinfo.innerHTML = (output) + ' лет';
         ageinfo.style.cssText = 'color: #040013; font-weight:400; font-size: 9px; background-color: #FFF; width: auto;';
@@ -88,9 +91,9 @@ input[6].addEventListener('change', () => {
 
 
 
-input[8].addEventListener('change', (evt) =>{
+input[6].addEventListener('change', (evt) =>{
     evt.preventDefault();
-    tg[2].textContent = String(input[8].value);
+    tg[2].textContent = String(input[6].value);
 })
 
 
