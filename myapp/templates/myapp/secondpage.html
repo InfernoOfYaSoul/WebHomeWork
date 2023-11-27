@@ -2,7 +2,9 @@
 
 <!-- {% load static %} -->
 {% block content %}
-
+<form action="{% url 'next_page' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% load usertags %}
 <div class="top">
     <form action="{% url 'startpage' %}">
         <button class="top-button">На главную</button>
@@ -22,15 +24,17 @@
     <div class="center-left">
         <div class="center-left-info">
             <div>
-                <div class="radiostud">
-                    <div class="male">
+                <div class="radiosex">
+
+                    {{ form.student }}
+                    <!-- <div class="male">
                         <input class="custom-radio" name="gender" type="radio" id="male" style="cursor: pointer;" required>
                         <label class="gender" for="male">Студент / выпускник</label>
                     </div>
                     <div class="female">
                         <input class="custom-radio" name="gender" type="radio" id="female" style="cursor: pointer;" required>
                         <label class="gender" for="female">Сотрудник</label>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="info-block">
@@ -38,38 +42,45 @@
                     <div class="course-pick">
                         <div class="course-text"> Курс </div>
                         <div class="block-pick">
-                            <div class="unpicked">1</div>
-                            <div class="unpicked">2</div>
-                            <div class="unpicked">3</div>
-                            <div class="unpicked">4</div>
-                            <div class="unpicked">5</div>
-                            <div class="picked">6</div>
+                            
+                            {{ form.step|index:0 }}
+                            {{ form.step|index:1 }}
+                            {{ form.step|index:2 }}
+                            {{ form.step|index:3 }}
+                            {{ form.step|index:4 }}  
+                            {{ form.step|index:5 }}                          
+
+                            <!-- <button id="c1" class="unpicked">1</button>
+                            <button id="c2" class="unpicked">2</button>
+                            <button id="c3" class="unpicked">3</button>
+                            <button id="c4" class="unpicked">4</button>
+                            <button id="c5" class="unpicked">5</button>
+                            <button id="c6" class="picked">6</button> -->
                         </div>
                     </div>
                     <div>
-                        <input type="checkbox" class="custom-checkbox" id="finish" name="finish">
-                        <label for="finish">Уже окончил вышку</label>
+                        {{ form.step|index:6 }}
                     </div>
                 </div>
                 <div class="personal-info">
                     <div class="upper-txt"> Ступень образования </div>
                     <div class="window">
                         <div class="personal-info-txt"> Ступень образования </div>
-                        <img src="/myapp/static/img/ArrowdownBig.svg" class="arrow">
+                        <img src="/static/img/ArrowdownBig.svg" class="arrow">
                     </div>
                 </div>
                 <div class="personal-info">
                     <div class="upper-txt"> Факультет </div>
                     <div class="window">
                         <div class="personal-info-txt"> Факультет </div>
-                        <img src="/myapp/static/img/ArrowdownBig.svg" class="arrow">
+                        <img src="/static/img/ArrowdownBig.svg" class="arrow">
                     </div>
                 </div>
                 <div class="personal-info">
                     <div class="upper-txt"> Образовательная программа </div>
                     <div class="window">
                         <input class="personal-info-txt" id="personal-info-txt" placeholder="Образовательная программа">
-                        <img src="/myapp/static/img/Magnifier.svg" class="arrow">
+                        <img src="/static/img/Magnifier.svg" class="arrow">
                     </div>
                 </div>
             </div>
@@ -88,7 +99,7 @@
             <div class="center-right-profile">
                 <div class="center-right-profile-photo">
                     <div class="photomini">
-                        <img src="/myapp/static/img/Dogie.jpg">
+                        <img src="/static/img/Dogie.jpg" id="profileImg">
                     </div>
                     <div class="showcontact">
                         Показать контакты
@@ -105,13 +116,13 @@
                                     Парень
                                 </div>
                                 <div class="dot">
-                                    <img src="/myapp/static/img/Dot.svg">
+                                    <img src="/static/img/Dot.svg">
                                 </div>
                                 <div class="sex">
                                     21 год
                                 </div>
                                 <div class="dot">
-                                    <img src="/myapp/static/img/Dot.svg">
+                                    <img src="/static/img/Dot.svg">
                                 </div>
                                 <div class="sex">
                                     1 курс бакалавриат ВШБ ИБ
@@ -132,7 +143,7 @@
                                     Развернуть
                                 </button>
                                 <div class="smallarrow">
-                                    <img src="/myapp/static/img/Arrowdown.svg">
+                                    <img src="/static/img/Arrowdown.svg">
                                 </div>
                             </div>
                         </div>
@@ -140,22 +151,22 @@
                     <div class="center-right-profile-info-down">
                         <div class="center-right-profile-info-down-up">
                             <div class="life-preferences">
-                                <img src="/myapp/static/img/Preferences.svg">
+                                <img src="/static/img/Preferences.svg">
                             </div>
                             <div class="metro-price">
                                 <div class="price">
-                                    <img src="/myapp/static/img/Price.svg">
+                                    <img src="/static/img/Price.svg">
                                 </div>
                                 <div class="underground">
-                                    <img src="/myapp/static/img/Undergroung.svg">
+                                    <img src="/static/img/Undergroung.svg">
                                 </div>
                             </div>
                         </div>
                         <div class="center-right-profile-info-down-down">
-                            <img src="/myapp/static/img/Line3.svg", class="Line3">
+                            <img src="/static/img/Line3.svg", class="Line3">
                             <div class="alkosos">
-                                <img src="/myapp/static/img/Alko.svg", class="Alko">
-                                <img src="/myapp/static/img/Sosed.svg", class="Sosed">
+                                <img src="/static/img/Alko.svg", class="Alko">
+                                <img src="/static/img/Sosed.svg", class="Sosed">
                             </div>
                         </div>
                     </div>
@@ -183,4 +194,6 @@
         Продолжить
     </button>
 </div>
+</form>
+<script src="/static/js/second.js"></script>
 {% endblock %}

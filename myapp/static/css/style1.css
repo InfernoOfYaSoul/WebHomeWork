@@ -343,6 +343,17 @@ input[type="file"] {
     gap: 10px;
 }
 
+#id_student{
+    display: inline-flex;
+    gap: 10px;
+}
+
+#id_step{
+    display: inline-flex;
+    font-size: 20px;
+    gap: 25px;
+}
+
 .custom-radio{
     position: absolute;
     z-index: -1;

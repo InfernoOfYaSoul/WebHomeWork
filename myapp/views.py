@@ -14,13 +14,13 @@ def next_page(request):
         if form.is_valid():
             print("Save2")
             form.save()
-            return render(request, "myapp/secondpage.html")
+            return render(request, "myapp/secondpage.html", {"form": form})
         print("Post no save2")
 
     else:
         form = NameForm()
         print("No post no save2")
-    return render(request, "myapp/secondpage.html")
+    return render(request, "myapp/secondpage.html", {"form": form})
 
 def name_input(request):
     if request.method == "POST":

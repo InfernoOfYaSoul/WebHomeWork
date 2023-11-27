@@ -15,7 +15,6 @@ let bottomChild = document.querySelector('.bottom');
 
 
 
-
 document.querySelector('.center-left-ava-download-button-input').onchange = function (event) {
     let target = event.target;
 
@@ -85,7 +84,7 @@ input[5].addEventListener('change', () => {
     if (output < 100){
         ageinfo.innerHTML = (output) + ' лет';
         ageinfo.style.cssText = 'color: #040013; font-weight:400; font-size: 9px; background-color: #FFF; width: auto;';
-        //window.localStorage.setItem('age', ageinfo.innerHTML);
+        window.localStorage.setItem('age', ageinfo.innerHTML);
     }
 });
 
@@ -97,17 +96,5 @@ input[6].addEventListener('change', (evt) =>{
 })
 
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     if (window.jQuery){console.log("Yes")}
-//     else{console.log("No")}
-//     nextPageButton.addEventListener('click', (evt) =>{
-//         evt.preventDefault();
-//         parent.removeChild(topChild);
-//         parent.removeChild(centerChild);
-//         parent.removeChild(bottomChild);
-        
-//         jQuery("main").load("myapp/templates/myapp/index2.html #container");
-//     })
-// })
-
+localStorage.setItem("years", String(age));
 
