@@ -85,6 +85,7 @@ input[5].addEventListener('change', () => {
         ageinfo.innerHTML = (output) + ' лет';
         ageinfo.style.cssText = 'color: #040013; font-weight:400; font-size: 9px; background-color: #FFF; width: auto;';
         window.localStorage.setItem('age', ageinfo.innerHTML);
+        
     }
 });
 

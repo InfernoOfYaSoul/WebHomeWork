@@ -2,11 +2,8 @@
 
 <!-- {% load static %} -->
 {% block content %}
-<form action="{% url 'next_page' %}" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {% load usertags %}
 <div class="top">
-    <form action="{% url 'startpage' %}">
+    <form action="{% url 'name_input' %}">
         <button class="top-button">На главную</button>
     </form>
     <div class="top-info">
@@ -19,6 +16,9 @@
         </div>
     </div>
 </div>
+<form action="{% url 'next_page' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% load usertags %}
 <div class="center">
     <!-- left -->
     <div class="center-left">
@@ -100,7 +100,7 @@
             <div class="center-right-profile">
                 <div class="center-right-profile-photo">
                     <div class="photomini">
-                        <img src="{{ form.photo.url }}" id="profileImg">
+                        <img src="{{ url }}" id="profileImg">
                         <!-- <img src="/static/img/Dogie.jpg" id="profileImg"> -->
                     </div>
                     <div class="showcontact">
@@ -111,22 +111,22 @@
                     <div class="center-right-profile-info-up">
                         <div class="hatinfo">
                             <div class="name">
-                                Саша Фефелов
+                                {{ name }}
                             </div>
                             <div class="small_hatinfo">
                                 <div class="sex">
-                                    Парень
+                                    {{ sex }}
                                 </div>
                                 <div class="dot">
                                     <img src="/static/img/Dot.svg">
                                 </div>
-                                <div class="sex">
+                                <div class="sex" id="age-second-page">
                                     21 год
                                 </div>
                                 <div class="dot">
                                     <img src="/static/img/Dot.svg">
                                 </div>
-                                <div class="sex">
+                                <div class="sex" id="course_input">
                                     1 курс бакалавриат ВШБ ИБ
                                 </div>
                             </div>

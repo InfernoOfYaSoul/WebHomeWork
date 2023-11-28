@@ -19,6 +19,7 @@ choice_step = [
     ('4', '4'),
     ('5', '5'),
     ('6', '6'),
+    ('n', 'Уже окончил вышку')
 ]
 
 choice_ed_step = [
@@ -35,12 +36,16 @@ class NameForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         self.fields["photo"].required = False
+        self.fields["sex"].required = False
         self.fields["birth_date"].required = False
         self.fields["name"].label = ""
         self.fields["phone_num"].initial = "+7"
         self.fields["phone_num"].required = False
         self.fields["name"].required = False
         self.fields["tg"].required = False
+        self.fields["text"].required = False
+
+
         self.fields["student"].required = False
         self.fields["step"].required = False
         self.fields["ed_step"].required = False
@@ -63,14 +68,14 @@ class NameForm(forms.ModelForm):
             "phone_num": forms.TextInput(attrs = {"class": "inn", "type": "text", "name": "phonenum", "id": "name", "placeholder": "Введите номер"}),
             "text": forms.TextInput(attrs = {"name": "infobox", "id": "infobox"}),
 
-            "student": forms.RadioSelect(choices=choice_stud, attrs = {'name': 'gender', "class": "custom-r"}),
+            "student": forms.RadioSelect(choices=choice_stud, attrs = {'name': 'gender'}),
             "step": forms.RadioSelect(choices=choice_step, attrs = {'name': 'gender', "class": "custom-r", "style": "displey:none"}),
             "ed_step": forms.Select(attrs = {"class": "personal-info-txt_dropbox"}, choices=choice_ed_step),
         }
 
     def clean_fields(self):
         photo = self.cleaned_data['photo']
-        if photo is None:
+        if photo == "":
             raise ValidationError("photo is null")
 
     

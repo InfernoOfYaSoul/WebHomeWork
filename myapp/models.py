@@ -45,9 +45,9 @@ class Info(models.Model):
         ('postgraduate', 'Аспирантура'),
     ]
 
-    photo = models.ImageField(upload_to="img/", default = None, verbose_name="Фото профиля")
+    photo = models.ImageField(upload_to="img/", default = "", verbose_name="Фото профиля")
     sex = models.CharField(default="", max_length=1, choices=choice_sex, verbose_name="Пол")
-    birth_date = models.DateField(default="", verbose_name="Дата рождения")
+    birth_date = models.DateField(default="2004-12-12", verbose_name="Дата рождения")
     name = models.CharField(max_length = 200, verbose_name="Имя")
     tg = models.CharField(max_length = 200, verbose_name="Телеграм")
     phone_num = models.CharField(max_length = 12, default="", verbose_name="Номер телефона")
