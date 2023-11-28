@@ -1,4 +1,4 @@
-let topButton = document.getElementById("demo");
+let openDescription = document.querySelector(".unwrap");
 let imgButton = document.querySelector(".center-left-ava-download-button");
 
 
@@ -96,5 +96,15 @@ input[6].addEventListener('change', (evt) =>{
 })
 
 
-localStorage.setItem("years", String(age));
+
+function animation(){
+    
+}
+
+
+openDescription.addEventListener('click', (evt) =>{
+    evt.preventDefault();
+    animation();
+})
+
 

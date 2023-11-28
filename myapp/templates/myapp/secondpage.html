@@ -64,15 +64,16 @@
                 </div>
                 <div class="personal-info">
                     <div class="upper-txt"> Ступень образования </div>
-                    <div class="window">
-                        <div class="personal-info-txt"> Ступень образования </div>
+                    <div class="window_dropbox">
+                        <!-- <div class="personal-info-txt"> Ступень образования </div> -->
+                        {{ form.ed_step }}
                         <img src="/static/img/ArrowdownBig.svg" class="arrow">
                     </div>
                 </div>
                 <div class="personal-info">
                     <div class="upper-txt"> Факультет </div>
                     <div class="window">
-                        <div class="personal-info-txt"> Факультет </div>
+                        <input class="personal-info-txt" placeholder="Факультет">
                         <img src="/static/img/ArrowdownBig.svg" class="arrow">
                     </div>
                 </div>
@@ -99,7 +100,8 @@
             <div class="center-right-profile">
                 <div class="center-right-profile-photo">
                     <div class="photomini">
-                        <img src="/static/img/Dogie.jpg" id="profileImg">
+                        <img src="{{ form.photo.url }}" id="profileImg">
+                        <!-- <img src="/static/img/Dogie.jpg" id="profileImg"> -->
                     </div>
                     <div class="showcontact">
                         Показать контакты

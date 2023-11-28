@@ -39,7 +39,13 @@ class Info(models.Model):
         ('n', 'Уже окончил вышку')
     ]
 
-    photo = models.ImageField(upload_to="static/img/pics/", default = "null", verbose_name="Фото профиля")
+    choice_ed_step = [
+        ('bachelor', 'Бакалавриат'),
+        ('magistracy', 'Магистратура'),
+        ('postgraduate', 'Аспирантура'),
+    ]
+
+    photo = models.ImageField(upload_to="img/", default = None, verbose_name="Фото профиля")
     sex = models.CharField(default="", max_length=1, choices=choice_sex, verbose_name="Пол")
     birth_date = models.DateField(default="", verbose_name="Дата рождения")
     name = models.CharField(max_length = 200, verbose_name="Имя")
@@ -49,6 +55,7 @@ class Info(models.Model):
 
     student =  models.CharField(default="", max_length=1, choices=choice_stud, verbose_name='Студент или сотрудник')
     step = models.CharField(default="", max_length=1, choices=choice_step, verbose_name='Курс')
+    ed_step = models.CharField(default="", max_length=12, choices=choice_ed_step, verbose_name='Ступень образования')
 
     
 

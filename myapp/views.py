@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Info
 from .forms import NameForm
+from django.core.files.storage import default_storage
 
 
 
@@ -9,8 +10,11 @@ def first_page(request):
     return render(request, 'myapp/firstpage.html',)
 
 def next_page(request):
+    first_page_data = request.session.get('first_page_data', {})
+    print(first_page_data)
     if request.method == "POST":
-        form = NameForm(request.POST, request.FILES)
+        form = NameForm(request.POST)
+        
         if form.is_valid():
             print("Save2")
             form.save()
@@ -25,10 +29,40 @@ def next_page(request):
 def name_input(request):
     if request.method == "POST":
         form = NameForm(request.POST, request.FILES)
+        
         if form.is_valid():
             print("Save")
-            form.save()
+            # form.save()
+            data = form.cleaned_data
+
+            uploaded_file = request.FILES['photo']
+            # print(type(uploaded_file))
+            name = default_storage.save(uploaded_file.name, uploaded_file)
+            url = default_storage.url(name)
+            # print(data['photo'])
+            # print(url)
+            data['photo'] = url[7:]
+            # print(data['photo'])
+
+            request.session['first_page_data'] = data
             return redirect('next_page')
+        
+        # username = [request.FILES,
+        #             request.POST['sex'],
+        #             request.POST['birth_date'],
+        #             request.POST['name'],
+        #             request.POST['tg'],
+        #             request.POST['phone_num'],
+        #             request.POST['text'],
+                    
+        #             ]
+        # for i in range(7):
+        #     if username[i] is not None :
+        #         print(form)
+        #form.errors
+
+        print(form)
+        
         print("Post no save")
     else:
         form = NameForm()

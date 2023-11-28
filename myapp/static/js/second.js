@@ -12,6 +12,6 @@ if (age != null){
     ageinfo.innerHTML = age;
 }
 
-
+// http://127.0.0.1:8000/media/img/IMG_1633.png
 
 
