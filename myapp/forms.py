@@ -73,10 +73,10 @@ class NameForm(forms.ModelForm):
             "ed_step": forms.Select(attrs = {"class": "personal-info-txt_dropbox"}, choices=choice_ed_step),
         }
 
-    def clean_fields(self):
-        photo = self.cleaned_data['photo']
-        if photo == "":
-            raise ValidationError("photo is null")
+    # def clean_fields(self):
+    #     photo = self.cleaned_data['photo']
+    #     if photo == "":
+    #         raise ValidationError("photo is null")
 
     
 

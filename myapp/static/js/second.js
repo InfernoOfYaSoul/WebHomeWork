@@ -2,6 +2,7 @@ let ageinfo = document.querySelector("#age-second-page");
 let course = document.querySelectorAll('.custom-r');
 let course_input = document.querySelector("#course_input");
 let ed_step = document.querySelector("#id_ed_step");
+let openDescription = document.querySelector(".unwrap");
 
 let age = window.localStorage.getItem("age");
 console.log(window.localStorage)
@@ -56,6 +57,17 @@ let newImg = document.querySelector(".photomini");
 let newImgcss = document.querySelector(".photomini img");
 newImg.style.cssText ="width: 140px; height: 140px; overflow: hidden; border-radius: 16px; border: 1px solid #EBEBEB; background: #FFFFFF 50% / cover no-repeat;" ;
 newImgcss.style.cssText = " width: 140px; height: 140px; object-position: 0 0; object-fit: cover;" ;
+
+
+function animation(){
+    
+}
+
+openDescription.addEventListener('click', (evt) =>{
+    evt.preventDefault();
+    animation();
+})
+
 
 // localStorage.clear()
 

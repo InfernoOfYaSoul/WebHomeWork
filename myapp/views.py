@@ -55,7 +55,6 @@ def next_page(request):
     first_page_data = dict(list(first_page_data.items())[:7])
     first_page_data['photo'] = "../media/" + first_page_data['photo']
     # first_page_data['birth_date'] = first_page_data['birth_date'].isoformat()
-    print(first_page_data)
 
     sex = 'Девушка'
     name = first_page_data['name']
@@ -67,12 +66,13 @@ def next_page(request):
         if form.is_valid():
             second_page_data = form.cleaned_data
             second_page_data = dict(list(second_page_data.items())[7:])
-            print(second_page_data)
             all_data = {**first_page_data, **second_page_data}
             print(all_data)
             print("Save2")
+            form = Info(**all_data)
             form.save()
-            return render(request, "myapp/secondpage.html", {"form": form, "url": first_page_data['photo'], "name": name, "sex": sex})
+            form = NameForm(request.POST)
+            return redirect('name_input')
         print("Post no save2")
 
     else:
