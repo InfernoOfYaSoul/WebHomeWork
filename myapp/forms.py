@@ -58,9 +58,6 @@ class NameForm(forms.ModelForm):
         ]
         widgets = {
             "photo": forms.FileInput(attrs = {"class": "center-left-ava-download-button-input", "onchange": "gotPhoto(this)", "accept": "image/jpeg, image/png"}),
-            # "sex": forms.RadioSelect(attrs = {'name': 'gender', "class": "custom-radio"}, choices=choice_sex),
-            # "sex1": forms.Select(attrs = {'name': 'gender', "class": "custom-radio", "id": "male"}),personal-info-txt
-            # "sex2": forms.Select(attrs = {'name': 'gender', "class": "custom-radio", "id": "female"}),, "class": "custom-radio" 
             "sex": forms.RadioSelect(choices=choice_sex, attrs = {'name': 'gender', "class": "custom-r"}),
             "birth_date": forms.TextInput(attrs = {"class": "inn", "name": "date", "id": "date", "placeholder": "Дата рождения", "onfocus": "(this.type='date')", "onblur": "(this.type='text')"}),
             "name": forms.TextInput(attrs = {"class": "inn", "name": "Name", "id": "name"}),  
@@ -72,13 +69,3 @@ class NameForm(forms.ModelForm):
             "step": forms.RadioSelect(choices=choice_step, attrs = {'name': 'gender', "class": "custom-r", "style": "displey:none"}),
             "ed_step": forms.Select(attrs = {"class": "personal-info-txt_dropbox"}, choices=choice_ed_step),
         }
-
-    # def clean_fields(self):
-    #     photo = self.cleaned_data['photo']
-    #     if photo == "":
-    #         raise ValidationError("photo is null")
-
-    
-
-    
-
